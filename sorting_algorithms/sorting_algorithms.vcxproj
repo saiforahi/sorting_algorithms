@@ -152,9 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Driver.cpp" />
+    <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="SelectionSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

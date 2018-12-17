@@ -1,13 +1,15 @@
 #include <iostream>
 #include "SelectionSort.h"
+#include "InsertionSort.h"
 using namespace std;
 
 SelectionSort sorter1;
+InsertionSort sorter2;
 
 void selection_sorting_array()
 {
 	int UnsortedArray[] = { 14,33,27,10,35,19,48,44 };
-	cout << "unsorted array\n";
+	cout << "\nunsorted array\n";
 	for (int index = 0; index < (sizeof(UnsortedArray) / sizeof(*UnsortedArray)); ++index)
 	{
 		cout << "\t" << UnsortedArray[index];
@@ -30,9 +32,22 @@ void selection_sorting_vector()
 	cout << "Sorting in an unsorted vector" << endl;
 	sorter1.VectorSorter(v1);
 }
+
+void insertion_sorting_array()
+{
+	int UnsortedArray[] = { 14,33,27,10,35,19,48,44 };
+	cout << "\nunsorted array\n";
+	for (int index = 0; index < (sizeof(UnsortedArray) / sizeof(*UnsortedArray)); ++index)
+	{
+		cout << "\t" << UnsortedArray[index];
+	}
+	cout << "\n\nInsertion sorting in array....";
+	sorter2.ArraySorter(UnsortedArray, (sizeof(UnsortedArray) / sizeof(*UnsortedArray)));
+}
 int main()
 {
 	selection_sorting_array();
 	selection_sorting_vector();
+	insertion_sorting_array();
 	return 0;
 }

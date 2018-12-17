@@ -21,9 +21,15 @@
     <ClCompile Include="Driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InsertionSort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SelectionSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertionSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
