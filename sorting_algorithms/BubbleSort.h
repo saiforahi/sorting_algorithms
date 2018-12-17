@@ -1,4 +1,6 @@
 #pragma once
+#include <vector>
+using namespace std;
 class BubbleSort
 {
 public:
@@ -6,5 +8,6 @@ public:
 	~BubbleSort();
 
 	void ArraySorter(int arr[],int size);
+	void VectorSorter(vector<int>&);
 };
 

@@ -108,6 +108,31 @@ void bubble_sorting_array()
 		cout << "\t" << UnsortedArray[index];
 	}
 }
+
+void bubble_sorting_vector()
+{
+	vector<int> v1;
+	v1.push_back(14);
+	v1.push_back(33);
+	v1.push_back(27);
+	v1.push_back(10);
+	v1.push_back(35);
+	v1.push_back(19);
+	v1.push_back(48);
+	v1.push_back(44);
+	cout << "\n\n\nunsorted vector\n";
+	for (int index = 0; index < v1.size(); ++index)
+	{
+		cout << "\t" << v1[index];
+	}
+	cout << "\nBubble sorting in an unsorted vector" << endl;
+	sorter3.VectorSorter(v1);
+	cout << "\n\nAfter Sorting\n";
+	for (int index = 0; index < v1.size(); ++index)
+	{
+		cout << "\t" << v1[index];
+	}
+}
 int main()
 {
 	selection_sorting_array();
@@ -115,5 +140,6 @@ int main()
 	insertion_sorting_array();
 	insertion_sorting_vector();
 	bubble_sorting_array();
+	bubble_sorting_vector();
 	return 0;
 }

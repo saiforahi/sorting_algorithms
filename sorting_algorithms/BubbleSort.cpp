@@ -32,3 +32,25 @@ void BubbleSort::ArraySorter(int arr[], int size)
 		}
 	}
 }
+
+void BubbleSort::VectorSorter(vector<int>& givenVector)
+{
+	for (int index = 0; index < givenVector.size(); index++)
+	{
+		for (int index2 = 0; index2 < givenVector.size() - index - 1; index2++)
+		{
+			if (givenVector[index2] > givenVector[index2 + 1])
+			{
+				int temp = givenVector[index2];
+				givenVector[index2] = givenVector[index2 + 1];
+				givenVector[index2 + 1] = temp;
+			}
+		}
+		//printing updated vector
+		cout << "\n";
+		for (int index = 0; index < givenVector.size(); index++)
+		{
+			cout << "\t" << givenVector[index];
+		}
+	}
+}
