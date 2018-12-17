@@ -35,3 +35,26 @@ void InsertionSort::ArraySorter(int arr[], int arr_size)
 		}
 	}
 }
+
+void InsertionSort::VectorSorter(vector<int>& givenVector)
+{
+	if (givenVector.size() > 1)
+	{
+		for (int index = 1; index < givenVector.size(); ++index)
+		{
+			int index2 = index - 1;
+			int key = givenVector[index];
+			while (index2 >= 0 && givenVector[index2] > key)
+			{
+				givenVector[index2 + 1] = givenVector[index2];
+				--index2;
+			}
+			givenVector[index2 + 1] = key;
+			cout << "\n";
+			for (int index = 0; index < givenVector.size(); ++index)
+			{
+				cout << "\t" << givenVector[index];
+			}
+		}
+	}
+}
