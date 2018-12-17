@@ -1,7 +1,6 @@
 #include "SelectionSort.h"
 #include <iostream>
 using namespace std;
-
 SelectionSort::SelectionSort()
 {
 }
@@ -32,6 +31,27 @@ void SelectionSort::ArraySorter(int arr[], int arr_size)
 		for (int index3 = 0; index3 < arr_size; ++index3)
 		{
 			cout << "\t" << arr[index3];
+		}
+	}
+}
+
+void SelectionSort::VectorSorter(vector<int>& givenVector)
+{
+	for (int i = 0; i < givenVector.size() - 1; ++i)
+	{
+		int min = i;
+		for (int j = i + 1; j < givenVector.size(); ++j)
+		{
+			if (givenVector[j] < givenVector[min])
+			{
+				min = j;
+			}
+		}
+		Swap(givenVector[min], givenVector[i]);
+		cout << "\n";
+		for (int index = 0; index < givenVector.size(); ++index)
+		{
+			cout << "\t" << givenVector[index];
 		}
 	}
 }

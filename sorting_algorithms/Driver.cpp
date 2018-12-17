@@ -15,8 +15,24 @@ void selection_sorting_array()
 	cout << "\n\nSelection sorting....";
 	sorter1.ArraySorter(UnsortedArray, (sizeof(UnsortedArray) / sizeof(*UnsortedArray)));
 }
+
+void selection_sorting_vector()
+{
+	vector<int> v1;
+	v1.push_back(14);
+	v1.push_back(33);
+	v1.push_back(27);
+	v1.push_back(10);
+	v1.push_back(35);
+	v1.push_back(19);
+	v1.push_back(48);
+	v1.push_back(44);
+	cout << "Sorting in an unsorted vector" << endl;
+	sorter1.VectorSorter(v1);
+}
 int main()
 {
 	selection_sorting_array();
+	selection_sorting_vector();
 	return 0;
 }
