@@ -1,6 +1,5 @@
 #include "MergeSort.h"
 #include <iostream>
-using namespace std;
 
 MergeSort::MergeSort()
 {
@@ -60,33 +59,56 @@ void MergeSort::MergeArray(int givenArray[], int arr_size)
 }
 
 
-void VectorMerger(vector<int> givenVector, int low, int mid, int high)
+vector<int> VectorMerger(vector<int> left, vector<int> right)
 {
-	vector<int>temp;//temporary merger vector
-	int i = low, j = mid + 1;//i is for left-hand,j is for right-hand
-	int k = 0;//k is for the temporary vector
-	while (i <= mid && j <= high)
-	{
-		if (givenVector[i] <= givenVector[j])
-			temp.push_back(givenVector[i++]);
-		else
-			temp.push_back(givenVector[j++]);
+	vector<int> result;//temporary vector for merge sorting
+	while (left.size() > 0 || right.size() > 0) {
+		if (left.size() > 0 && right.size() > 0) {
+			if ((int)left.front() <= (int)right.front()) {
+				result.push_back((int)left.front());
+				left.erase(left.begin());
+			}
+			else {
+				result.push_back((int)right.front());
+				right.erase(right.begin());
+			}
+		}
+		else if ((int)left.size() > 0) {
+			for (int i = 0; i < (int)left.size(); i++)
+				result.push_back(left[i]);
+			break;
+		}
+		else if ((int)right.size() > 0) {
+			for (int i = 0; i < (int)right.size(); i++)
+				result.push_back(right[i]);
+			break;
+		}
 	}
-	//rest elements of left-half
-	while (i <= mid)
-		temp[k++] = givenVector[i++];
-	//rest elements of right-half
-	while (j <= high)
-		temp[k++] = givenVector[j++];
-	//copy the mergered temporary array to the original vector
-	for (k = 0, i = low; i <= high; ++i, ++k)
+	cout << "\n";
+	for (int index = 0; index < result.size(); index++)
 	{
-		givenVector[i] = temp[k];
+		cout << "\t" << result[index];
 	}
+	return result;//returning partially or fully merged vector
 }
 
 
-void MergeSort::MergeVector(std::vector<int>& givenVector)
+vector<int> MergeSort::MergeVector(vector<int> givenVector)
 {
-	VectorMergeSortHelper(givenVector,0,givenVector.size()-1);
+	if (givenVector.size() <= 1)
+		return givenVector;
+
+	vector<int> left, right, result;//three temporary vectors, one is for left half, one is for right half
+									//and another one is their result after sorting
+	int middle = ((int)givenVector.size() + 1) / 2;
+	for (int i = 0; i < middle; i++) {
+		left.push_back(givenVector[i]);
+	}
+	for (int i = middle; i < (int)givenVector.size(); i++) {
+		right.push_back(givenVector[i]);
+	}
+	left = MergeVector(left);
+	right = MergeVector(right);
+	result = VectorMerger(left, right);
+	return result;
 }

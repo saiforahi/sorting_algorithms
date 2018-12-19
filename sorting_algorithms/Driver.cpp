@@ -170,7 +170,7 @@ void merge_sorting_vector()
 		cout << "\t" << v1[index];
 	}
 	cout << "\nMerge sorting in an unsorted vector" << endl;
-	sorter4.MergeVector(v1);
+	v1=sorter4.MergeVector(v1);
 	cout << "\n\nAfter Sorting\n";
 	for (int index = 0; index < v1.size(); ++index)
 	{
