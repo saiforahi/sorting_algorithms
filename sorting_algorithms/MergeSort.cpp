@@ -46,9 +46,10 @@ void ArrayMergeSortHelper(int arr[], int low, int high)
 		ArrayMergeSortHelper(arr, low, mid);
 		ArrayMergeSortHelper(arr, mid + 1, high);
 		ArrayMerger(arr, low, mid, high);
+		cout << "\n";
 		for (int index = 0; index < high+1; index++)
 		{
-			cout << "\t" << arr[index] << "\t";
+			cout << "\t" << arr[index] ;
 		}
 	}
 }
