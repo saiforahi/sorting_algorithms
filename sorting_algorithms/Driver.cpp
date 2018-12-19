@@ -152,6 +152,31 @@ void merge_sorting_array()
 		cout << "\t" << UnsortedArray[index];
 	}
 }
+
+void merge_sorting_vector()
+{
+	vector<int> v1;
+	v1.push_back(14);
+	v1.push_back(33);
+	v1.push_back(27);
+	v1.push_back(10);
+	v1.push_back(35);
+	v1.push_back(19);
+	v1.push_back(48);
+	v1.push_back(44);
+	cout << "\n\n\nunsorted vector\n";
+	for (int index = 0; index < v1.size(); index++)
+	{
+		cout << "\t" << v1[index];
+	}
+	cout << "\nMerge sorting in an unsorted vector" << endl;
+	sorter4.MergeVector(v1);
+	cout << "\n\nAfter Sorting\n";
+	for (int index = 0; index < v1.size(); ++index)
+	{
+		cout << "\t" << v1[index];
+	}
+}
 int main()
 {
 	selection_sorting_array();
@@ -161,5 +186,6 @@ int main()
 	bubble_sorting_array();
 	bubble_sorting_vector();
 	merge_sorting_array();
+	merge_sorting_vector();
 	return 0;
 }

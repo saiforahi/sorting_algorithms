@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 class MergeSort
 {
 public:
@@ -6,5 +7,6 @@ public:
 	~MergeSort();
 
 	void MergeArray(int givenArray[],int arr_size);
+	void MergeVector(std::vector<int>&);
 };
 

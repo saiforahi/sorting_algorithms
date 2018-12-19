@@ -58,3 +58,35 @@ void MergeSort::MergeArray(int givenArray[], int arr_size)
 {
 	ArrayMergeSortHelper(givenArray, 0, arr_size - 1);
 }
+
+
+void VectorMerger(vector<int> givenVector, int low, int mid, int high)
+{
+	vector<int>temp;//temporary merger vector
+	int i = low, j = mid + 1;//i is for left-hand,j is for right-hand
+	int k = 0;//k is for the temporary vector
+	while (i <= mid && j <= high)
+	{
+		if (givenVector[i] <= givenVector[j])
+			temp.push_back(givenVector[i++]);
+		else
+			temp.push_back(givenVector[j++]);
+	}
+	//rest elements of left-half
+	while (i <= mid)
+		temp[k++] = givenVector[i++];
+	//rest elements of right-half
+	while (j <= high)
+		temp[k++] = givenVector[j++];
+	//copy the mergered temporary array to the original vector
+	for (k = 0, i = low; i <= high; ++i, ++k)
+	{
+		givenVector[i] = temp[k];
+	}
+}
+
+
+void MergeSort::MergeVector(std::vector<int>& givenVector)
+{
+	VectorMergeSortHelper(givenVector,0,givenVector.size()-1);
+}
