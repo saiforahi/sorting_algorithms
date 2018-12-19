@@ -2,11 +2,13 @@
 #include "SelectionSort.h"
 #include "InsertionSort.h"
 #include "BubbleSort.h"
+#include "MergeSort.h"
 using namespace std;
 
 SelectionSort sorter1;
-InsertionSort sorter2;
-BubbleSort sorter3;
+InsertionSort sorter2;//Four types of sorter
+BubbleSort sorter3;//
+MergeSort sorter4;
 
 void selection_sorting_array()
 {
@@ -37,7 +39,7 @@ void selection_sorting_vector()
 	v1.push_back(48);
 	v1.push_back(44);
 	cout << "\n\n\nunsorted vector\n";
-	for (int index = 0; index < v1.size(); ++index)
+	for (int index = 0; index < v1.size(); index++)
 	{
 		cout << "\t" << v1[index];
 	}
@@ -133,6 +135,23 @@ void bubble_sorting_vector()
 		cout << "\t" << v1[index];
 	}
 }
+
+void merge_sorting_array()
+{
+	int UnsortedArray[] = { 14,33,27,10,35,19,48,44 };
+	cout << "\n\n\nunsorted array\n";
+	for (int index = 0; index < (sizeof(UnsortedArray) / sizeof(*UnsortedArray)); ++index)
+	{
+		cout << "\t" << UnsortedArray[index];
+	}
+	cout << "\n\nMerge sorting....";
+	sorter4.MergeArray(UnsortedArray, (sizeof(UnsortedArray) / sizeof(*UnsortedArray)));
+	cout << "\n\nAfter sorting..\n";
+	for (int index = 0; index < (sizeof(UnsortedArray) / sizeof(*UnsortedArray)); ++index)
+	{
+		cout << "\t" << UnsortedArray[index];
+	}
+}
 int main()
 {
 	selection_sorting_array();
@@ -141,5 +160,6 @@ int main()
 	insertion_sorting_vector();
 	bubble_sorting_array();
 	bubble_sorting_vector();
+	merge_sorting_array();
 	return 0;
 }

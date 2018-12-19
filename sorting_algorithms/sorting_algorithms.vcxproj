@@ -154,11 +154,13 @@
     <ClCompile Include="BubbleSort.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="InsertionSort.cpp" />
+    <ClCompile Include="MergeSort.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="InsertionSort.h" />
+    <ClInclude Include="MergeSort.h" />
     <ClInclude Include="SelectionSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
