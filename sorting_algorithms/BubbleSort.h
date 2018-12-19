@@ -7,7 +7,7 @@ public:
 	BubbleSort();
 	~BubbleSort();
 
-	void ArraySorter(int arr[],int size);
-	void VectorSorter(vector<int>&);
+	void ArraySorter(int arr[],int size);//function to sort an unsorted array
+	void VectorSorter(vector<int>&);//function to sort a vector
 };
 

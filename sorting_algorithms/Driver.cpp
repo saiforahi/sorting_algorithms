@@ -179,13 +179,13 @@ void merge_sorting_vector()
 }
 int main()
 {
-	selection_sorting_array();
-	selection_sorting_vector();
-	insertion_sorting_array();
-	insertion_sorting_vector();
-	bubble_sorting_array();
-	bubble_sorting_vector();
-	merge_sorting_array();
-	merge_sorting_vector();
+	selection_sorting_array();//Selection sorting in an unsorted array
+	selection_sorting_vector();//Selection sorting in an unsorted vector
+	insertion_sorting_array();//insertion sorting in an unsorted array
+	insertion_sorting_vector();//insertion sorting in an unsorted vector
+	bubble_sorting_array();//Bubble sorting in an unsorted array
+	bubble_sorting_vector();//Bubble sorting in an unsorted vector
+	merge_sorting_array();//Merge sorting in an unsorted array
+	merge_sorting_vector();//Merge sorting in an unsorted vector
 	return 0;
 }
